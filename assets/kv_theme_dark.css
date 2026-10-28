@@ -1,0 +1,18 @@
+
+html[data-kv-theme="dark"] {
+  --paper: #0c0c10; --ink: #f2f0ea; --sub: #8c8c98; --rule: #2a2a33;
+  --pink: #ff2a5f; --yellow: #ff2a5f; --blue: #ff2a5f;
+}
+html[data-kv-theme="dark"] body { background: var(--paper); color: var(--ink); }
+html[data-kv-theme="dark"] #kv { --kv-c: #ff2a5f; --kv-side: #000; --kv-mk: #ff2a5f;
+  background-color: #0c0c10;
+  background-image: linear-gradient(rgba(242,240,234,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(242,240,234,.05) 1px, transparent 1px);
+  background-size: 48px 48px; }
+
+html[data-kv-theme="dark"] #kv .kv-bg img { filter: grayscale(1) contrast(1.6) brightness(.45); opacity: .42; mix-blend-mode: screen; }
+html[data-kv-theme="dark"] #kv .kv-mk { background: none; color: var(--kv-c); padding: 0; }
+html[data-kv-theme="dark"] .hero h1 .mark { background: none; color: var(--pink); }
+html[data-kv-theme="dark"] .logo .tag { display: none; }
+html[data-kv-theme="dark"] .btn { background: var(--pink); border-color: var(--pink); color: #0c0c10; box-shadow: 5px 5px 0 #000; }
+html[data-kv-theme="dark"] #kv .ex .stk { color: #0c0c10; background: var(--ink); }
+html[data-kv-theme="dark"] .kv-g i, html[data-kv-theme="dark"] .waf i { border-color: #55555f; }
