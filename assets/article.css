@@ -231,6 +231,8 @@ h1 span { display: inline-block; }
 
 .site-foot { margin-top: 96px; border-top: 2px solid var(--ink); }
 .site-foot .in { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; padding-block: 22px 40px; font-size: var(--fs-note); color: var(--sub); }
+.site-foot .in { align-items: center; }
+.foot-logo img { display: block; height: 40px; width: auto; }
 
 @media (max-width: 900px) {
   .wrow { grid-template-columns: 1fr; gap: 28px; }

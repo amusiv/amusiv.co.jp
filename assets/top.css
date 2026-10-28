@@ -107,6 +107,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 footer.foot { padding-block: 28px 40px; font-size: 13px; color: var(--sub); }
 footer.foot .inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 footer.foot .w { font-family: var(--display); color: var(--ink); }
+footer.foot .inner { align-items: center; }
+.foot-logo img { display: block; height: 40px; width: auto; }
 
 @media (max-width: 860px) {
   .nav a:not(.x) { display: none; }
