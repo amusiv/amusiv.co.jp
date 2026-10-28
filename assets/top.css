@@ -139,4 +139,4 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 .nw { display: inline-block; }
-
+.rcard.is-soon { cursor: default; } .rcard.is-soon:hover { transform: none; box-shadow: none; } .rcard.is-soon .pic span { font-size: 24px; letter-spacing: .14em; }
