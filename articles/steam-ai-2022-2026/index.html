@@ -1,15 +1,16 @@
 <!doctype html>
 <html lang="ja">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI前とAI後で、Steamはどう変わったか｜Amusiv Project レポート</title>
-<meta name="description" content="AIが本格的に使われ始めた2026年と、生成AIが広まる前の2022年のSteamを数字で比べました。増えた本数の約3分の2はAIを使ったゲーム、売上の94%は上位1%に集中。小さなゲーム開発への6つの示唆。">
+<title>AIの普及前後で、Steamはどう変わったか｜Amusiv Project レポート</title>
+<meta name="description" content="AIが本格的に使われ始めた2026年と、生成AIが広まる前の2022年のSteamを数字で比べました。増えたゲーム数の約3分の2はAIを使ったゲーム、売上の94%は上位1%に集中。小さなゲーム開発への6つの示唆。">
 <link rel="canonical" href="https://amusiv.co.jp/articles/steam-ai-2022-2026/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Amusiv Project レポート">
-<meta property="og:title" content="AI前とAI後で、Steamはどう変わったか">
-<meta property="og:description" content="1日70本以上、増えた本数の約3分の2はAIを使ったゲーム。2022年と2026年のSteamを数字で比べた、小さなゲーム開発のためのレポート。">
+<meta property="og:title" content="AIの普及前後で、Steamはどう変わったか">
+<meta property="og:description" content="1日70本以上、増えたゲーム数の約3分の2はAIを使ったゲーム。2022年と2026年のSteamを数字で比べた、小さなゲーム開発のためのレポート。">
 <meta property="og:url" content="https://amusiv.co.jp/articles/steam-ai-2022-2026/">
 <meta property="og:image" content="https://amusiv.co.jp/articles/steam-ai-2022-2026/ogp.png">
 <meta property="og:image:width" content="1200">
@@ -18,18 +19,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@Amusiv_Project">
 <meta property="article:published_time" content="2026-10-27">
+<meta property="article:modified_time" content="2026-10-29">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
-<link rel="stylesheet" href="../../assets/article.css?v=e53d1b4b">
+<link rel="stylesheet" href="../../assets/article.css?v=a1032e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "AI前とAI後で、Steamはどう変わったか",
+  "headline": "AIの普及前後で、Steamはどう変わったか",
   "datePublished": "2026-10-27",
-  "dateModified": "2026-10-27",
+  "dateModified": "2026-10-29",
   "inLanguage": "ja",
   "image": "https://amusiv.co.jp/articles/steam-ai-2022-2026/ogp.png",
   "mainEntityOfPage": "https://amusiv.co.jp/articles/steam-ai-2022-2026/",
@@ -39,12 +41,27 @@
 </script>
 </head>
 <body>
-<header class="masthead">
+<header class="masthead" id="top">
   <div class="in">
     <a class="brand" href="../../" aria-label="Amusiv Project レポート トップ"><img class="logo-img" src="../../assets/img/logo_header.svg" alt="Amusiv Project" width="498" height="112"></a>
-    <span>小さなゲーム開発のためのレポート</span>
+    <nav class="mnav" aria-label="メニュー">
+      <a href="../../#latest">レポート</a>
+      <a href="../../#about">私たちについて</a>
+      <a class="x" href="https://x.com/Amusiv_Project" target="_blank" rel="noopener">X ↗</a>
+    </nav>
+    <details class="mtoc">
+      <summary aria-label="目次を開く"><span class="ic" aria-hidden="true"></span>目次</summary>
+      <div class="mtoc-in"><ol class="mtoc-list"><li><a href="#s1"><span class="tn">01</span><span class="tt">増えたゲーム数の約3分の2は、AIを使ったゲーム</span></a></li><li><a href="#s2"><span class="tn">02</span><span class="tt">AIを使ったゲームは、数の割に遊ばれていない</span></a></li><li><a href="#s3"><span class="tn">03</span><span class="tt">新作は、過去の名作とも戦わされている</span></a></li><li><a href="#s4"><span class="tn">04</span><span class="tt">売上の94%は「週に5本」ほどが持っていく</span></a></li><li><a href="#s5"><span class="tn">05</span><span class="tt">AIは「見える所」ほど厳しく見られる</span></a></li><li><a href="#s6"><span class="tn">06</span><span class="tt">伸びを支えたのは中国の客</span></a></li><li><a href="#answers"><span class="tn nn">A</span><span class="tt">私たちが考えること</span></a></li><li><a href="#method"><span class="tn nn">M</span><span class="tt">この記事の数字について</span></a></li></ol><div class="sh"><a class="sx" href="https://x.com/intent/post?text=AI%E3%81%AE%E6%99%AE%E5%8F%8A%E5%89%8D%E5%BE%8C%E3%81%A7%E3%80%81Steam%E3%81%AF%E3%81%A9%E3%81%86%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%8B&amp;url=https%3A%2F%2Famusiv.co.jp%2Farticles%2Fsteam-ai-2022-2026%2F&amp;via=Amusiv_Project" target="_blank" rel="noopener">X でシェア</a><button class="sc" type="button" data-copy="https://amusiv.co.jp/articles/steam-ai-2022-2026/">リンクをコピー</button></div></div>
+    </details>
   </div>
+  <div class="prog" aria-hidden="true"><i></i></div>
 </header>
+<aside class="rail" aria-label="目次と共有">
+  <p class="rail-h">目次</p>
+  <ol class="rail-list"><li><a href="#s1"><span class="tn">01</span><span class="tt">増えたゲーム数の約3分の2は、AIを使ったゲーム</span></a></li><li><a href="#s2"><span class="tn">02</span><span class="tt">AIを使ったゲームは、数の割に遊ばれていない</span></a></li><li><a href="#s3"><span class="tn">03</span><span class="tt">新作は、過去の名作とも戦わされている</span></a></li><li><a href="#s4"><span class="tn">04</span><span class="tt">売上の94%は「週に5本」ほどが持っていく</span></a></li><li><a href="#s5"><span class="tn">05</span><span class="tt">AIは「見える所」ほど厳しく見られる</span></a></li><li><a href="#s6"><span class="tn">06</span><span class="tt">伸びを支えたのは中国の客</span></a></li><li><a href="#answers"><span class="tn nn">A</span><span class="tt">私たちが考えること</span></a></li><li><a href="#method"><span class="tn nn">M</span><span class="tt">この記事の数字について</span></a></li></ol>
+  <div class="sh"><a class="sx" href="https://x.com/intent/post?text=AI%E3%81%AE%E6%99%AE%E5%8F%8A%E5%89%8D%E5%BE%8C%E3%81%A7%E3%80%81Steam%E3%81%AF%E3%81%A9%E3%81%86%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%8B&amp;url=https%3A%2F%2Famusiv.co.jp%2Farticles%2Fsteam-ai-2022-2026%2F&amp;via=Amusiv_Project" target="_blank" rel="noopener">X でシェア</a><button class="sc" type="button" data-copy="https://amusiv.co.jp/articles/steam-ai-2022-2026/">リンクをコピー</button></div>
+  <a class="totop" href="#top">上へ戻る</a>
+</aside>
 
 <main>
 <article>
@@ -52,9 +69,9 @@
     <div class="in">
       <div>
         <div class="kicker"><span class="tag">Steam × AI</span><span class="sep">／</span><span>2022 vs 2026</span></div>
-        <h1><span>AI前とAI後で、</span><span>Steamはどう変わったか</span></h1>
+        <h1><span>AIの普及前後で、</span><span>Steamはどう変わったか</span></h1>
         <p class="lead">AIが本格的に使われ始めた2026年。生成AIが広まる前の2022年と数字を並べると、「ゲームがあふれた」の一言では片づかない変化が見えてくる。</p>
-        <div class="meta"><time datetime="2026-10-27">2026年10月27日</time><span>Amusiv Project</span><span>2026年は1〜10月の実績と、年間の着地見込み</span></div>
+        <div class="meta"><span class="d">公開 <time datetime="2026-10-27">2026年10月27日</time></span><span class="rt">読了 約10分</span></div>
       </div>
       <figure class="cover" role="img" aria-label="1日に出るゲーム。2022年は約34本、2026年は約74本">
         <figcaption>1日に出るゲーム<span>1ケース＝2本</span></figcaption>
@@ -69,21 +86,21 @@
   <nav class="points grid" aria-labelledby="points-h">
       <h2 id="points-h">数字から見えた6つのこと</h2>
       <ol>
-        <li><a href="#s1"><span class="pn">01</span><span class="pt">増えた本数の約3分の2は、AIを使ったゲーム</span></a></li>
+        <li><a href="#s1"><span class="pn">01</span><span class="pt">増えたゲーム数の約3分の2は、AIを使ったゲーム</span></a></li>
         <li><a href="#s2"><span class="pn">02</span><span class="pt">AIを使ったゲームは、数の割に遊ばれていない。その差は2年間縮まっていない</span></a></li>
         <li><a href="#s3"><span class="pn">03</span><span class="pt">新作は、過去の名作とも戦わされている</span></a></li>
-        <li><a href="#s4"><span class="pn">04</span><span class="pt">1日70本以上が出て、売上の94%は「週に5本」ほどが持っていく</span></a></li>
-        <li><a href="#s5"><span class="pn">05</span><span class="pt">AIの使い道は「見える所」から「見えない所」へ移っていく</span></a></li>
-        <li><a href="#s6"><span class="pn">06</span><span class="pt">伸びを支えたのは中国の客。日本の作り手のAI感覚とはずれがある</span></a></li>
+        <li><a href="#s4"><span class="pn">04</span><span class="pt">週に約500本が出て、売上の94%は「週に5本」ほどが持っていく</span></a></li>
+        <li><a href="#s5"><span class="pn">05</span><span class="pt">AIは「見える所」ほど厳しく見られる</span></a></li>
+        <li><a href="#s6"><span class="pn">06</span><span class="pt">伸びを支えたのは中国の客。日本の作り手と海外のユーザーのAI感覚のズレ</span></a></li>
       </ol>
   </nav>
 
   <section class="sec grid" id="compare">
     <h2>2022年と2026年を並べる</h2>
     <figure class="fig wide">
-      <figcaption class="fh"><b><span class="ph">出る本数は2倍以上。</span><span class="ph">お金は約1.8倍、</span><span class="ph">遊ぶ人は約1.4倍</span></b><span>AI前（2022年）とAI後（2026年）</span></figcaption>
+      <figcaption class="fh"><b><span class="ph">出るゲーム数は2倍以上。</span><span class="ph">売上は約1.8倍、</span><span class="ph">遊ぶ人は約1.4倍</span></b><span>AIの普及前（2022年）と普及後（2026年）</span></figcaption>
       <table class="cmp">
-        <thead><tr><th scope="col">項目</th><th scope="col" class="y">2022年</th><th scope="col" class="y">2026年</th><th scope="col">伸び</th></tr></thead>
+        <thead><tr><th scope="col">項目</th><th scope="col" class="y">2022年</th><th scope="col" class="y">2026年</th><th scope="col">伸び<span class="th-sub">（2022年＝1）</span></th></tr></thead>
         <tbody>
         <tr><th scope="row">1日に出るゲーム</th><td class="a" data-y="2022年">約34本</td><td class="b" data-y="2026年">約74本<small>（1月1日〜10月16日の平均）</small></td><td class="x"><span class="xv">2倍以上</span><span class="rb" aria-hidden="true"><i style="--r:1"></i><i class="b1" style="--r:2.18"></i></span></td></tr>
         <tr><th scope="row">1年に出るゲーム</th><td class="a" data-y="2022年">約1万2,300本</td><td class="b" data-y="2026年">2万4,000本以上<small>（見込み）</small></td><td class="x"><span class="xv">約2倍</span><span class="rb" aria-hidden="true"><i style="--r:1"></i><i class="b1" style="--r:1.95"></i></span></td></tr>
@@ -92,8 +109,13 @@
         <tr><th scope="row">AIの使用を届け出た新作</th><td class="a" data-y="2022年">ほぼなし</td><td class="b" data-y="2026年">約31%<small>（1〜7月）</small></td><td class="x"><span class="xv">―</span></td></tr>
         </tbody>
       </table>
-      <div class="cmp"><div class="rk" aria-hidden="true"><span><i></i>2022年を1としたとき</span><span><i class="b1"></i>2026年</span></div></div>
-      <p class="src">2026年の年間の売上は、上半期の111億ドルに、2025年下半期と同じ103億ドルを足した試算。売上はすべて分析会社の推計で、Valve は公表していない。</p>
+      <ul class="src rows">
+        <li><span class="rn">1日に出るゲーム</span><a class="kind" href="#method">試算</a>1年のゲーム数（SteamDB の集計をもとにした報道）を日数で割った値</li>
+        <li><span class="rn">1年に出るゲーム</span><a class="kind" href="#method">実数</a>SteamDB の集計をもとにした報道（<a href="#sources">Kotaku・Kevuru Games</a>）。2026年は見込み</li>
+        <li><span class="rn">ゲームの売上</span><a class="kind" href="#method">推計</a><a class="kind" href="#method">試算</a>Alinea Analytics の推計。2026年の年間は、上半期の111億ドルに、2025年下半期と同じ103億ドルを足した試算。Valve は売上を公表していない</li>
+        <li><span class="rn">同時接続の最高</span><a class="kind" href="#method">実数</a>Steam の同時接続の記録を伝えた報道</li>
+        <li><span class="rn">AIの届け出</span><a class="kind" href="#method">実数</a>Sulka Haro の調べ（ストアの届け出を数えた値）</li>
+      </ul>
     </figure>
 
     <figure class="fig wide">
@@ -103,13 +125,13 @@
         <div class="u-row mid"><span class="y">2025</span><span class="t"><i style="--n:58"></i><span class="v"><small>約</small>58<small>本</small></span></span></div>
         <div class="u-row hot"><span class="y">2026</span><span class="t"><i style="--n:74"></i><span class="v"><small>約</small>74<small>本</small></span></span></div>
       </div>
-      <p class="src">出典：SteamDB の集計をもとにした報道から計算（2022年・2025年は年間の本数÷365日、2026年は10月16日までの2万1,388本÷289日）</p>
+      <p class="src"><a class="kind" href="#method">試算</a>出典：SteamDB の集計をもとにした報道から計算（2022年・2025年は年間のゲーム数÷365日、2026年は10月16日までの2万1,388本÷289日）</p>
     </figure>
-    <p>出る本数は2倍以上。お金は約1.8倍、遊ぶ人は約1.4倍。お金も人も増えているが、本数の伸びには追いついていない。では、その中で何が起きているのか。</p>
+    <p>出るゲーム数は2倍以上。売上は約1.8倍、遊ぶ人は約1.4倍。売上も人も増えているが、ゲーム数の伸びには追いついていない。では、その中で何が起きているのか。</p>
   </section>
 
   <section class="sec grid" id="s1">
-    <h2><span class="no">01</span><span class="ph">増えた本数の約3分の2は、</span><span class="ph">AIを使ったゲーム</span></h2>
+    <h2><span class="no">01</span><span class="ph">増えたゲーム数の約3分の2は、</span><span class="ph">AIを使ったゲーム</span></h2>
     <figure class="fig wide">
       <figcaption class="fh"><b>AIなしは+290本、AIありは+517本</b><span>1か月に出るゲームの内訳</span></figcaption>
       <div class="stack" role="img" aria-label="届け出の義務化前はAIありが月約13本、AIなしが約1030本。2026年半ばはAIありが約530本、AIなしが約1320本">
@@ -117,10 +139,10 @@
         <div class="s-row"><span class="y">2026年半ば</span><div class="s-bar"><span class="g" style="--w:57.1">AIなし 約1,320本</span><span class="p" style="--w:22.9">AIあり 約530本</span><span class="out tot"><small>約</small>1,850<small>本</small></span></div></div>
         <div class="s-row gain"><span class="y">増えた分</span><div class="s-bar"><span class="g" style="--w:12.5">+290本</span><span class="p" style="--w:22.4">+517本</span><span class="call">約3分の2がAIあり</span></div></div>
       </div>
-      <p class="src">出典：Sulka Haro による2023年7月〜2026年7月の全数調査（5万3,597本）</p>
+      <p class="src"><a class="kind" href="#method">実数</a>出典：<a href="https://fragwyz.substack.com/p/three-years-of-ai-on-steam" rel="noopener">Sulka Haro</a> による2023年7月〜2026年7月の全数調査（5万3,597本）。ストアのAIの届け出を数えた値</p>
     </figure>
     <p>AIの届け出が義務になる前、AIを使ったと届け出るゲームは月に約13本だった。2026年半ばには月に約530本。AIを使っていないゲームも増えたが、増え方は月に約290本だけだ。</p>
-    <p>この間に増えた本数のうち、<strong class="mk">約3分の2はAIを使ったゲーム</strong>だ。「ゲームがあふれた」の正体の大部分は、AIで作られたゲームの急増だと言える。年ごとに見ると、届け出の割合は2024年の約11%、2025年の約20%、2026年（1〜7月）の約31%と、毎年10ポイントずつ上がっている。</p>
+    <p>この間に増えたゲーム数のうち、<strong class="mk">約3分の2はAIを使ったゲーム</strong>だ。「ゲームがあふれた」の大部分は、AIで作られたゲームの急増だと言える。年ごとに見ると、届け出の割合は2024年の約11%、2025年の約20%、2026年（1〜7月）の約31%と、毎年10ポイントずつ上がっている。</p>
   </section>
 
   <section class="sec grid" id="s2">
@@ -132,7 +154,8 @@
       <li><b>約3割</b><span>新作のうち、AIを使ったゲームの割合</span></li>
       <li><b>1〜3割弱</b><span>売上のうち、AIを使ったゲームの割合（2025年後半〜2026年）</span></li>
     </ul>
-    <p>AIを使ったゲームは、本数では新作の3割を占めるのに、売上ではそれに届かない。レビュー100件に届く率は、AIを使っていないゲームの約半分。しかも<strong class="mk">この差は、2年間まったく縮まっていない</strong>。AIを使ったから売れないとは限らない（上位にもAIを使ったゲームはある）。ただ、平均すると不利で、その不利は道具が良くなっても消えていない。</p>
+    <p class="src"><a class="kind" href="#method">実数</a><a class="kind" href="#method">推計</a>出典：<a href="https://fragwyz.substack.com/p/three-years-of-ai-on-steam" rel="noopener">Sulka Haro</a> の全数調査。新作の割合は2026年半ばの値。売上の割合とレビュー100件に届く率は、レビュー数から推した値</p>
+    <p>AIを使ったゲームは、ゲーム数では新作の3割を占めるのに、売上ではそれに届かない。レビュー100件に届く率は、AIを使っていないゲームの約半分。しかも<strong class="mk">この差は、2年間まったく縮まっていない</strong>。AIを使ったから売れないとは限らない（上位にもAIを使ったゲームはある）。ただ、平均すると不利で、その不利は道具が良くなっても消えていない。</p>
     <figure class="fig wide">
       <figcaption class="fh"><b><span class="ph">売れたゲームでも、</span><span class="ph">AIを使っている割合は変わらない</span></b><span>AIを使ったゲームの割合（2025年の新作）</span></figcaption>
       <div class="hbars" role="img" aria-label="AIを使ったゲームの割合。新作全体は約20パーセント、売れた上位100本は約18パーセント">
@@ -140,44 +163,48 @@
         <div class="h-row hot"><span class="y">売れた上位100本</span><div class="t"><i style="--v:18"></i><em style="--v:18"><small>約</small>18<small>%</small></em></div></div>
         <div class="h-axis" aria-hidden="true"><span></span><div><span style="left:0">0</span><span style="left:40%">10%</span><span style="left:80%">20%</span></div></div>
       </div>
-      <p class="src">AIを使ったゲームの割合。出典：Sulka Haro の全数調査（新作全体・2025年）、TechRaptor の分析の紹介記事（上位100本・2025年）。2026年の上位100本の集計は見つからなかったため、2025年で比べた。</p>
+      <p class="src"><a class="kind" href="#method">実数</a>AIを使ったゲームの割合。出典：Sulka Haro の全数調査（新作全体・2025年）、TechRaptor の分析の紹介記事（上位100本・2025年）。2026年の上位100本の集計は見つからなかったため、2025年で比べた。</p>
     </figure>
     <p>2025年に売れた上位100本のうち、AIを使っていたのは約18%。新作全体の約20%とほぼ同じだ。<strong>売れたゲームの中でも、AIを使ったゲームは全体と同じ割合で入っている。</strong>AIを使ったこと自体は、ヒットの妨げになっていない。平均で不利に見えるのは、AIで手早く作られた、遊ばれにくいゲームが大量にあるからだと考えられる。</p>
-    <p class="note">上位100本には大手の作品も含まれる。上位の18本のうちストアで届け出ていたのは半分以下だったと報じられていて、大手でも届け出はまだ徹底されていない。また、届け出は「AIを使ったかどうか」の二択で、どれだけ使ったかは分からない。絵をすべてAIで作ったゲームも、テクスチャを1枚整えただけのゲームも、同じ「AIあり」になる。</p>
+    <p class="note"><b class="nl">読むときの注意</b>上位100本には大手の作品も含まれる。上位の18本のうちストアで届け出ていたのは半分以下だったと報じられていて、大手でも届け出はまだ徹底されていない。また、届け出は「AIを使ったかどうか」の二択で、どれだけ使ったかは分からない。絵をすべてAIで作ったゲームも、テクスチャを1枚整えただけのゲームも、同じ「AIあり」になる。</p>
   </section>
 
   <section class="sec grid" id="s3">
     <h2><span class="no">03</span>新作は、過去の名作とも戦わされている</h2>
-    <div class="kpi pair">
-      <div class="stat before"><div class="n">29<small>%</small></div><div class="m" aria-hidden="true"><i style="--v:29"></i></div><div class="l">2024年上半期の売上のうち、その期間に出た新作の分</div></div>
-      <div class="stat after"><div class="n">21<small>%</small></div><div class="m" aria-hidden="true"><i style="--v:21"></i></div><div class="l">2026年上半期の同じ割合</div></div>
-    </div>
+    <figure class="fig wide">
+      <figcaption class="fh"><b><span class="ph">売上のうち「その半年に出た新作」の取り分は、</span><span class="ph">29%から21%に下がった</span></b><span>上半期どうしで比べた。残りは、前から出ているゲームの売上</span></figcaption>
+      <div class="kpi pair">
+        <div class="stat before"><div class="n">29<small>%</small></div><div class="m" aria-hidden="true"><i style="--v:29"></i></div><div class="l">2024年上半期：売上のうち、この半年に出た新作が稼いだ分</div></div>
+        <div class="stat after"><div class="n">21<small>%</small></div><div class="m" aria-hidden="true"><i style="--v:21"></i></div><div class="l">2026年上半期：同じく、この半年に出た新作が稼いだ分</div></div>
+      </div>
+    </figure>
     <ul class="facts">
       <li><b>+14.5%</b><span>2026年上半期の売上の伸び（前の年の同じ期間と比べて）</span></li>
     </ul>
+    <p class="src"><a class="kind" href="#method">推計</a>出典：Alinea Analytics の推計（<a href="https://hitmarker.net/news/steam-generated-a-record-11-1-billion-in-the-first-half-of-2026-more-than-the-entire-year-of-2020-1992407" rel="noopener">Hitmarker</a>・<a href="https://wnhub.io/news/analytics/item-51407" rel="noopener">WN Hub</a> の報道）。Valve は売上を公表していない</p>
     <p>Steam 全体の売上は過去最高なのに、新作が取れる割合は下がっている。伸びを持っていったのは、すでに出ているゲームだ。<strong class="mk">新作どうしの競争に加えて、何年も売れ続ける過去の名作とも、客の時間とお金を取り合っている。</strong>発売日だけで勝負するゲームより、長く売れ続けるゲームの方が強くなっている。</p>
   </section>
 
   <section class="sec grid" id="s4">
-    <h2><span class="no">04</span><span class="ph">1日70本以上が出て、</span><span class="ph">売上の94%は</span><span class="ph">「週に5本」ほどが持っていく</span></h2>
-    <figure class="fig wide">
-      <figcaption class="fh"><b><span class="ph">売上の約94%は、</span><span class="ph">上位1%のゲームに集まっている</span></b><span>売上の集まり方（ゲーム100本で見たとき）</span></figcaption>
+    <h2><span class="no">04</span><span class="ph">週に約500本が出て、</span><span class="ph">売上の94%は</span><span class="ph">「週に5本」ほどが持っていく</span></h2>
+    <figure class="fig wide wfig">
+      <figcaption class="fh"><b><span class="ph">売上の約94%は、</span><span class="ph"><span class="w-on">上位1%のゲーム</span>に集まっている</span></b><span>売上の集まり方（ゲーム100本で見たとき）。<span class="w-on">ピンク</span>が上位1%、<span class="w-off">青</span>が残りの99%</span></figcaption>
       <div class="wrow">
-        <div class="waffles" role="img" aria-label="本数では上位1パーセントのゲームが、売上の約94パーセントを占める">
-          <div class="waffle"><h3><span>本数</span><em><small class="pre">上位</small>1<small>%</small></em></h3><div class="wgrid"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-          <div class="waffle"><h3><span>売上</span><em><small class="pre">約</small>94<small>%</small></em></h3><div class="wgrid"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="waffles" role="img" aria-label="ゲーム数では上位1パーセントのゲームが、売上の約94パーセントを占める"><span class="wflow" aria-hidden="true"></span>
+          <div class="waffle w-count"><h3><span>リリースされたゲーム数</span><em><small class="pre">上位</small>1<small>%</small></em></h3><div class="wgrid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i></div></div>
+          <div class="waffle w-sales"><h3><span>売上</span><em><small class="pre">約</small>94<small>%</small></em></h3><div class="wgrid"><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:12"></i><i class="on" style="--d:13"></i><i class="on" style="--d:14"></i><i class="on" style="--d:15"></i><i></i><i></i><i></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:12"></i><i class="on" style="--d:13"></i><i class="on" style="--d:14"></i><i class="on" style="--d:15"></i><i></i><i></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:12"></i><i class="on" style="--d:13"></i><i class="on" style="--d:14"></i><i class="on" style="--d:15"></i><i></i><i class="on" style="--d:6"></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:12"></i><i class="on" style="--d:13"></i><i class="on" style="--d:14"></i><i class="on" style="--d:15"></i><i class="on" style="--d:5"></i><i class="on" style="--d:6"></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:12"></i><i class="on" style="--d:13"></i><i class="on" style="--d:14"></i><i class="on" style="--d:4"></i><i class="on" style="--d:5"></i><i class="on" style="--d:6"></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:12"></i><i class="on" style="--d:13"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i><i class="on" style="--d:5"></i><i class="on" style="--d:6"></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:12"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i><i class="on" style="--d:5"></i><i class="on" style="--d:6"></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:11"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i><i class="on" style="--d:5"></i><i class="on" style="--d:6"></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i><i class="on" style="--d:10"></i><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i><i class="on" style="--d:5"></i><i class="on" style="--d:6"></i><i class="on" style="--d:7"></i><i class="on" style="--d:8"></i><i class="on" style="--d:9"></i></div></div>
         </div>
-        <div class="wcall"><span class="l">2026年の着地見込み2万4,000本なら、<span class="ph">上位1%は</span></span><span class="n"><small class="pre">約</small>240<small>本</small></span><span class="l">つまり</span><span class="n hot"><small class="pre">週に約</small>5<small>本</small></span></div>
+        <div class="wcall"><span class="l">2026年の着地見込み2万4,000本なら、上位1%は</span><span class="n"><small class="pre">約</small>240<small>本</small></span><span class="l">＝</span><span class="n hot"><small class="pre">週に約</small>5<small>本</small></span></div>
       </div>
-      <div class="key" aria-hidden="true"><span><i class="on"></i>上位1%のゲーム</span><span><i></i>残りの99%</span></div>
-      <p class="src">出典：Sulka Haro の全数調査（売上は推計）</p>
+      <p class="src"><a class="kind" href="#method">推計</a><a class="kind" href="#method">試算</a>出典：<a href="https://fragwyz.substack.com/p/three-years-of-ai-on-steam" rel="noopener">Sulka Haro</a> の全数調査（売上は推計）。2023年7月〜2026年7月に出た約5.4万本の売上を、レビュー数×30×定価で推した値。「約240本」「週に約5本」は、この割合を2026年の見込み2万4,000本に当てはめた試算</p>
     </figure>
     <p>売上の約94%は、上位1%のゲームに集まっている。2026年の着地見込み2万4,000本なら、上位1%は約240本。<strong>週に約5本</strong>だ。</p>
-    <p>ストアには1日70本以上が並ぶが、お金の面で意味のある勝負をしているのは、週に5本ほどの枠だ。しかも、レビューが1件もつかないゲームが約28%ある。<strong class="mk">「出せば少しは売れる」時代ではなく、「上の枠に入るか、ほぼゼロか」の時代</strong>になっている。2025年のインディーの売上1位「Schedule I」は、ほぼ1人の開発者の作品だ。上の枠は、小さなチームにも開いている。</p>
+    <p>ストアには週に約500本（1日70本以上）が並ぶが、売上の面で意味のある勝負をしているのは、週に5本ほどの枠だ。しかも、レビューが1件もつかないゲームが約28%ある。<strong class="mk">「出せば少しは売れる」時代ではなく、「上の枠に入るか、ほぼゼロか」の時代</strong>になっている。一方で、2025年のインディーの売上1位「Schedule I」は、ほぼ1人の開発者の作品だ。2026年6月に出た日本の「めっちゃカメレオン」は2人の開発者の作品で、発売から約1か月で1,500万本を超え、2026年の Steam でいちばん売れたゲームになった。</p>
+    <p class="tight"><strong class="mk">最上位の枠は、小さなチームにも開いている。</strong></p>
   </section>
 
   <section class="sec grid" id="s5">
-    <h2><span class="no">05</span><span class="ph">AIの使い道は「見える所」から</span><span class="ph">「見えない所」へ移っていく</span></h2>
+    <h2><span class="no">05</span><span class="ph">AIは「見える所」ほど</span><span class="ph">厳しく見られる</span></h2>
     <div class="kpi">
       <div class="stat"><div class="n">6<small>割</small></div><div class="m" aria-hidden="true"><i style="--v:60"></i></div><div class="l">AIの届け出のうち、キャラクターや背景など見た目の素材</div></div>
     </div>
@@ -185,11 +212,12 @@
       <li><b>64%</b><span>アーティストのうち、AIは「業界に悪い影響」と答えた人</span></li>
       <li><b>2026.1</b><span>Steam がルールを見直し。コードの補助など効率化のAIは届け出不要に</span></li>
     </ul>
-    <p>今いちばん使われている「見た目」は、遊ぶ人の目にも作り手の目にも、いちばん厳しく見られる所だ。2章の「AIを使ったゲームは遊ばれにくい」は、ここでつながる。一方、ルールの見直しで、<strong class="mk">見えない所（コードや作業の効率化）に使うAIは、届け出も要らず、遊ぶ人の評価にも響かない。</strong>差がつくのは、こちらの使い方だと考えられる。</p>
+    <p class="src"><a class="kind" href="#method">実数</a><a class="kind" href="#method">アンケート</a>出典：6割は <a href="https://wnhub.io/news/stores-and-publishing/item-48292" rel="noopener">WN Hub</a> が紹介した届け出のある7,818本の分析（2025年7月時点）。64%は <a href="https://gdconf.com/article/gdc-2026-state-of-the-game-industry-reveals-impact-of-layoffs-generative-ai-and-more/" rel="noopener">GDC 2026</a> の業界アンケート（回答2,300人超）。ルールの見直しは <a href="https://www.videogameschronicle.com/news/valve-has-significantly-rewritten-steams-rules-for-how-developers-much-disclose-ai-use" rel="noopener">VGC</a></p>
+    <p>今いちばん使われている「見た目」は、遊ぶ人の目にも作り手の目にも、いちばん厳しく見られる所だ。2章の「AIを使ったゲームは遊ばれにくい」は、ここでつながる。一方、ルールの見直しで、<strong class="mk">見えない所（コードや作業の効率化）に使うAIは、届け出も要らず、遊ぶ人の評価にも響かない。</strong>見える所のAIほど、作り手のこだわりが求められるだろう。</p>
   </section>
 
   <section class="sec grid" id="s6">
-    <h2><span class="no">06</span><span class="ph">伸びを支えたのは中国の客。</span><span class="ph">日本の作り手のAI感覚とはずれがある</span></h2>
+    <h2><span class="no">06</span><span class="ph">伸びを支えたのは中国の客。</span><span class="ph">日本の作り手と海外のユーザーのAI感覚のズレ</span></h2>
     <div class="kpi">
       <div class="stat"><div class="n">31<small>%</small></div><div class="m" aria-hidden="true"><i style="--v:31"></i></div><div class="l">Steam のユーザーで、言語が簡体字中国語の人（2026年9月・英語は34%）</div></div>
     </div>
@@ -197,16 +225,39 @@
       <li><b>85.8%</b><span>日本のゲーム開発者で、仕事で生成AIを使う人（CESA・2026年）</span></li>
       <li><b>52%</b><span>世界のゲーム業界の人で、AIは「業界に悪い影響」と答えた人（GDC・2026年）</span></li>
     </ul>
-    <p>分析会社は、2026年の売上の伸びの理由の1つに、中国などアジアからの客の流入を挙げている。Steam の客は、英語と中国語の人で3分の2になった。一方で、日本の作り手は世界よりはっきりAIに前向きだ（調査の対象が違うので単純には比べられない）。<strong class="mk">国内の感覚のまま見える所にAIを使うと、客の大半がいる海外での受け止め方とずれる</strong>おそれがある。</p>
+    <p class="src"><a class="kind" href="#method">アンケート</a>出典：言語の割合は Steam の公式のハードウェア＆ソフトウェア調査（任意参加・2026年9月）を <a href="https://xenospectrum.com/steam-survey-memory-gpu-september-2026/" rel="noopener">XenoSpectrum</a> が紹介した値で、月ごとの振れが大きい。85.8%は CESA の開発者調査（2026年・回答1,349）、52%と36%は GDC 2026 の業界調査（回答2,300人超）。回答者も聞き方も違うので、日本と世界の比較は目安</p>
+    <p>分析会社は、2026年の売上の伸びの理由の1つに、中国などアジアからの客の流入を挙げている。Steam の客は、英語と中国語の人で3分の2になった。つまり、日本のゲームを買う客の大半は海外にいる。</p>
+    <p>その海外の客は、AIを使ったゲームに厳しい。2章で見たとおり、AIを使ったゲームは数の割に遊ばれず、世界のゲーム業界の人の半数（52%）がAIを「業界に悪い影響」と見ている。一方で日本では、ゲーム開発者の85.8%が仕事で生成AIを使っている。世界の業界人では36%で、日本の作り手はAIへの抵抗が世界よりはっきり小さい。<strong class="mk">国内の感覚のまま見える所にAIを使うと、客の大半がいる海外での受け止め方とずれる</strong>おそれがある。</p>
   </section>
 
-  <section class="sec grid" id="answers">
-    <h2>小さなチームへの、数字からの答え</h2>
+  <section class="sec grid band" id="answers">
+    <h2>本レポートから私たちが考えること</h2>
     <ol class="answers">
-      <li><strong>「1日70本以上」ではなく「週に5本」の枠を狙う。</strong>出すだけでは届かない。発売前の「近日登場」のページとウィッシュリストで、上の枠に入る準備をする。</li>
-      <li><strong>AIは見えない所から使う。</strong>コードや作業の効率化には遠慮なく使う。見た目や声など遊ぶ人が触れる所は、使うなら質を上げ、使い方を正直に説明する。</li>
-      <li><strong>長く売れる作りにする。</strong>新作が取れる割合は下がっている。発売後の更新やセールで、何年も売れ続けるゲームを目指す。</li>
-      <li><strong>中国語と英語の客に向けて作る。</strong>伸びているのは中国の客だ。翻訳と、AIの使い方の説明を、海外の目線で用意する。</li>
+      <li><strong>ただ数を出すだけでは売り上げをあげるのは難しい。</strong>「週5本」の上位枠に入るために、しっかりと発売前の「近日登場」ページや「ウィッシュリスト」で、上の枠に入る準備をする。SNSを通したPRや小規模開発でもプレスリリースを扱ってくれるメディアをしっかりとリサーチして発信をしていく。</li>
+      <li><strong>AIの使われ方を、ユーザーはしっかりと見ている。</strong>コードや作業の効率化には遠慮なく使う。見た目や声など遊ぶ人が触れる所は、使うなら質を上げ、使い方を正直に説明する。</li>
+      <li><strong>国外のユーザーに向けた発売も視野に入れる。</strong>伸びているのは中国を中心とした海外ユーザー。AIの使い方の説明や各国の法律への対応はシビアに進めること。一方で、翻訳などは生成AIが大いに活用できる領域であるからこそ、海外展開、多言語対応は以前よりもトライする価値がある。</li>
+    </ol>
+  </section>
+
+  <section class="sec grid method" id="method">
+    <h2>この記事の数字について</h2>
+    <p class="m-lead">図と数字の下の札は、その数字の種類です。同じ「％」でも、数えた値と推した値では確かさが違います。</p>
+    <dl class="kinds">
+      <div><dt><span class="kind">実数</span></dt><dd>ストアに出たゲームの数、AIの届け出の数、同時接続の記録など、数えた値。</dd></div>
+      <div><dt><span class="kind">推計</span></dt><dd>分析会社が、レビュー数などから推した値。Valve は Steam の売上を公表していないので、売上の数字はすべてこれ。</dd></div>
+      <div><dt><span class="kind">試算</span></dt><dd>出典の数字に、この記事で計算を当てた値（割り算・足し算・当てはめ）。元の資料に無い。</dd></div>
+      <div><dt><span class="kind">アンケート</span></dt><dd>調査に答えた人の割合。答えた人の顔ぶれで変わる。</dd></div>
+    </dl>
+    <ul class="m-notes">
+      <li>2026年は1〜10月の実績と、年間の着地見込み。</li>
+      <li>図はすべて、出典の数字からこのサイトで作図しています。</li>
+      <li>誤りは、直した所を日付つきで下の「更新の記録」に追記します。お気づきの点は <a href="https://x.com/Amusiv_Project" target="_blank" rel="noopener">@Amusiv_Project</a> へ。</li>
+    </ul>
+    <h3 class="log-h">更新の記録</h3>
+    <ol class="log">
+      <li><time datetime="2026-10-30">2026年10月30日</time><span>めっちゃカメレオンの例を追加。言い回しを整理（本数→ゲーム数ほか）。06 の「日本の作り手は前向き」を、使う割合の比較（85.8%と36%）に改めた。結論の変更なし。</span></li>
+      <li><time datetime="2026-10-29">2026年10月29日</time><span>数字ごとに種類（実数・推計・試算・アンケート）と出典を明記。数字と結論の変更なし。</span></li>
+      <li><time datetime="2026-10-27">2026年10月27日</time><span>公開</span></li>
     </ol>
   </section>
 
@@ -215,20 +266,22 @@
     <div class="sources">
       <p class="note">数字には分析会社の推計を含む。Valve は Steam の売上や届け出の数を公表していない。</p>
       <ul>
-        <li>2026年の本数（10月16日までに2万1,388本で、2025年の年間を超えた）：<a href="https://kotaku.com/steam-valve-slop-ai-genai-vibe-coding-pc-game-releases-2000746749" rel="noopener">Kotaku</a> ／ 着地見込み：<a href="https://www.steampageanalyzer.com/blog/how-many-games-release-on-steam" rel="noopener">Steam Page Analyzer</a></li>
-        <li>2022年の本数：<a href="https://kevurugames.com/blog/how-many-video-games-are-released-each-year-industry-statistics/" rel="noopener">Kevuru Games（SteamDB の数字をもとにした集計）</a></li>
+        <li>2026年のゲーム数（10月16日までに2万1,388本で、2025年の年間を超えた）：<a href="https://kotaku.com/steam-valve-slop-ai-genai-vibe-coding-pc-game-releases-2000746749" rel="noopener">Kotaku</a> ／ 着地見込み：<a href="https://www.steampageanalyzer.com/blog/how-many-games-release-on-steam" rel="noopener">Steam Page Analyzer</a></li>
+        <li>2022年のゲーム数：<a href="https://kevurugames.com/blog/how-many-video-games-are-released-each-year-industry-statistics/" rel="noopener">Kevuru Games（SteamDB の数字をもとにした集計）</a></li>
         <li>売れた上位100本のAIの使用（2025年）：<a href="https://pixelpnl.beehiiv.com/p/pixel-p-l-nearly-one-in-five-top-steam-games-now-use-ai" rel="noopener">Pixel P&amp;L（TechRaptor の分析の紹介）</a></li>
         <li>AIの届け出、売上とレビューの差、上位1%の集中：<a href="https://fragwyz.substack.com/p/three-years-of-ai-on-steam" rel="noopener">Sulka Haro「Three years of AI on Steam」</a> ／ 年ごとの割合：<a href="https://www.pcgamer.com/gaming-industry/steam-week-in-review-take-cover-because-it-looks-like-more-than-half-of-steam-games-will-have-an-ai-disclosure-by-2027-2028/" rel="noopener">PC Gamer</a></li>
         <li>2026年上半期の売上と新作の割合（Alinea Analytics）：<a href="https://hitmarker.net/news/steam-generated-a-record-11-1-billion-in-the-first-half-of-2026-more-than-the-entire-year-of-2020-1992407" rel="noopener">Hitmarker</a> ／ <a href="https://wnhub.io/news/analytics/item-51407" rel="noopener">WN Hub</a></li>
         <li>2022年の売上（Alinea Analytics）：<a href="https://gameworldobserver.com/2025/12/22/indie-projects-generated-a-quarter-of-the-total-game-revenue-on-steam-by-the-end-of-2025-analytics" rel="noopener">Game World Observer</a></li>
-        <li>同時接続の最高：<a href="https://gameworldobserver.com/2022/11/28/steam-peak-concurrent-players-record-almost-32-million" rel="noopener">2022年</a> ／ <a href="https://tweaktown.com/news/114033/steam-tops-43-5-million-concurrent-users-breaking-previous-record" rel="noopener">2026年</a></li>
+        <li>同時接続の最高：2022年 <a href="https://gameworldobserver.com/2022/11/28/steam-peak-concurrent-players-record-almost-32-million" rel="noopener">Game World Observer</a> ／ 2026年 <a href="https://tweaktown.com/news/114033/steam-tops-43-5-million-concurrent-users-breaking-previous-record" rel="noopener">TweakTown</a></li>
         <li>Steam のAIのルールの見直し：<a href="https://www.videogameschronicle.com/news/valve-has-significantly-rewritten-steams-rules-for-how-developers-much-disclose-ai-use" rel="noopener">VGC</a> ／ 届け出の6割が見た目：<a href="https://wnhub.io/news/stores-and-publishing/item-48292" rel="noopener">WN Hub</a></li>
         <li>GDC 2026：<a href="https://gdconf.com/article/gdc-2026-state-of-the-game-industry-reveals-impact-of-layoffs-generative-ai-and-more/" rel="noopener">GDC</a> ／ CESA 2026：<a href="https://automaton-media.com/en/news/over-85-of-japanese-game-developers-use-generative-ai-in-game-development-2026-cesa-survey-shows-an-increase-from-last-years-51/" rel="noopener">AUTOMATON</a></li>
         <li>Steam の言語の割合：<a href="https://xenospectrum.com/steam-survey-memory-gpu-september-2026/" rel="noopener">XenoSpectrum</a> ／ Schedule I の開発者：<a href="https://steamcommunity.com/app/3164500/discussions/1/599648251203871677" rel="noopener">Steam コミュニティ</a></li>
+        <li>めっちゃカメレオンの開発者と売上：<a href="https://www.itmedia.co.jp/news/articles/2606/18/news124.html" rel="noopener">ITmedia</a> ／ <a href="https://hitmarker.net/news/indie-hit-meccha-chameleon-is-now-the-best-selling-game-of-2026-1944965" rel="noopener">Hitmarker</a></li>
       </ul>
       <div class="share">
-        <a href="https://x.com/intent/post?text=AI%E5%89%8D%E3%81%A8AI%E5%BE%8C%E3%81%A7%E3%80%81Steam%E3%81%AF%E3%81%A9%E3%81%86%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%8B&amp;url=https%3A%2F%2Famusiv.co.jp%2Farticles%2Fsteam-ai-2022-2026%2F&amp;via=Amusiv_Project" target="_blank" rel="noopener">X でシェアする</a>
+        <a href="https://x.com/intent/post?text=AI%E3%81%AE%E6%99%AE%E5%8F%8A%E5%89%8D%E5%BE%8C%E3%81%A7%E3%80%81Steam%E3%81%AF%E3%81%A9%E3%81%86%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%8B&amp;url=https%3A%2F%2Famusiv.co.jp%2Farticles%2Fsteam-ai-2022-2026%2F&amp;via=Amusiv_Project" target="_blank" rel="noopener">X でシェアする</a>
         <a href="https://x.com/Amusiv_Project" target="_blank" rel="noopener">@Amusiv_Project をフォロー</a>
+        <button class="sc" type="button" data-copy="https://amusiv.co.jp/articles/steam-ai-2022-2026/">リンクをコピー</button>
       </div>
     </div>
   </section>
@@ -237,10 +290,30 @@
 
 <footer class="site-foot">
   <div class="in">
-    <a class="foot-logo" href="../../" aria-label="Amusiv Project トップ"><img src="../../assets/img/logo_header.svg" alt="Amusiv Project" width="498" height="112"></a>
-    <span>モンスター融合の放置RPG「ミスメルド」を開発中</span>
-    <span>運営：合同会社Amusiv</span>
+    <div class="f-about">
+      <a class="foot-logo" href="../../" aria-label="Amusiv Project トップ"><img src="../../assets/img/logo_header.svg" alt="Amusiv Project" width="498" height="112"></a>
+      <p>Amusiv Project は、3人で活動する小さなゲーム開発チームです。いまはモンスター融合の放置RPG「ミスメルド」を公開に向けて作っています。開発しながら調べた市場の数字や、うまくいったこと・いかなかったことを、同じく小規模で開発する方々に向けて残していきます。</p>
+    </div>
+    <div class="f-next">
+      <p class="f-h">次のレポート<span>準備中</span></p>
+      <ul>
+        <li><span class="cat">MARKETING</span>ウィッシュリストは、発売前に何件あれば足りるのか</li>
+        <li><span class="cat">EVENT</span>Steam Next Fest に出る前に、小さなチームがやっておくこと</li>
+        <li><span class="cat">LOCALIZE</span>英語と中国語、小さなチームの翻訳はどこまでやるか</li>
+        <li><span class="cat">DEVLOG</span>ミスメルド開発日記 #1　3人で放置RPGを作り始めた</li>
+      </ul>
+    </div>
+    <div class="f-links">
+      <p class="f-h">リンク</p>
+      <ul>
+        <li><a href="../../">レポートのトップ</a></li>
+        <li><a href="../../#about">私たちについて</a></li>
+        <li><a href="https://x.com/Amusiv_Project" target="_blank" rel="noopener">X @Amusiv_Project ↗</a></li>
+      </ul>
+    </div>
+    <p class="f-copy">運営：合同会社Amusiv</p>
   </div>
 </footer>
+<script src="../../assets/article.js?v=a1031j" defer></script>
 </body>
 </html>
