@@ -459,3 +459,91 @@ html:not([data-kv-theme]) #kv .ex .h22 { color: var(--blue); }
 #kv .kc-svg .lvl2 { stroke: var(--ink); stroke-width: 2; stroke-dasharray: 5 4; }
 #kv .kc-svg .cap.mid { text-anchor: middle; }
 #kv .kc-svg .stk.jp.lg text { font-size: 32px; }
+
+#kv .kc-big .l.top { margin: 0 0 .5cqh !important; font-size: clamp(12px, 2.3cqw, 15px); font-weight: 900; color: var(--ink); }
+#kv .kc-big .n .g { display: inline-flex; flex-direction: column; align-items: flex-start; vertical-align: baseline; }
+#kv .kc-big .n .g .k { order: 2; display: block; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: max(.19em, 12px); line-height: 1.2; letter-spacing: 0; color: var(--ink); text-shadow: none; margin: .14em 0 0 .06em; white-space: nowrap; }
+#kv .kc-big .n .g small { display: inline; }
+#kv .kc-svg .tl.ai, #kv .kc-svg .tl.ai3 { fill: var(--kv-c); font-size: 17px; paint-order: stroke; stroke: var(--paper); stroke-width: 5px; }
+#kv .kc-svg .tl.no { fill: var(--sub); font-size: 14px; }
+#kv .kc-svg .ld.ai { stroke: var(--kv-c); stroke-width: 2.5; fill: none; }
+#kv .kc-svg .rt { font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 15px; fill: var(--ink); }
+#kv .kc-svg .arw { fill: none; stroke-width: 4; stroke-linecap: round; marker-end: url(#k3-mk); }
+#kv .kc-svg .arw.pk { stroke: var(--kv-c); } #kv .kc-svg .arw.bl { stroke: var(--blue); stroke-width: 3; }
+#kv .kc-svg .rl { font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 22px; fill: var(--ink); text-anchor: start; }
+#kv .kc-svg .rl .h { font-family: var(--kv-num), sans-serif; font-weight: 800; font-size: 30px; }
+#kv .kc-svg .rl.pk .h { fill: var(--kv-c); } #kv .kc-svg .rl.bl .h { fill: var(--blue); }
+#kv .kc-svg .rl2 { font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 20px; fill: var(--ink); text-anchor: start; }
+#kv .kc-svg .rl2 .b { font-family: var(--kv-num), sans-serif; font-weight: 800; font-size: 34px; }
+#kv .kc-svg .rl2.pk .b { fill: var(--kv-c); } #kv .kc-svg .rl2.bl .b { fill: var(--blue); }
+#kv .kc-svg .tl.ai { font-size: 16px; }
+#kv .kc-svg .tl.no { font-size: 13px; fill: var(--ink); opacity: .6; }
+#kv .kc-svg .rl3 { font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 20px; text-anchor: start; paint-order: stroke; stroke: var(--paper); stroke-width: 5px; }
+#kv .kc-svg .rl3.pk { fill: var(--ink); } #kv .kc-svg .rl3.bl { fill: var(--ink); }
+#kv .kc-svg .rl3 .b { font-family: var(--kv-num), sans-serif; font-weight: 800; font-size: 40px; }
+#kv .kc-svg .rl3.pk .b { fill: var(--kv-c); } #kv .kc-svg .rl3.bl .b { fill: var(--blue); font-size: 30px; }
+#kv .kc-svg .rl3.sm { font-size: 16px; }
+
+@container (max-width: 560px) {
+  #kv .kc-svg .tl.ai { font-size: 21px; } #kv .kc-svg .tl.no { font-size: 17px; }
+  #kv .kc-svg .tv { font-size: 40px; } #kv .kc-svg .tl { font-size: 20px; }
+  #kv .kc-svg .rl3 { font-size: 23px; } #kv .kc-svg .rl3.sm { font-size: 20px; } #kv .kc-svg .rl3 .b { font-size: 46px; } #kv .kc-svg .rl3.bl .b { font-size: 34px; }
+}
+
+#kv .kc-svg .fn { text-anchor: middle; font-family: var(--kv-num), sans-serif; font-weight: 800; font-size: 46px; fill: var(--kv-c); }
+#kv .kc-svg .fn.sh { fill: var(--blue); }
+#kv .kc-svg .fn .u { font-family: var(--kv-jp), sans-serif; font-size: .38em; fill: var(--ink); }
+#kv .kc-svg .fn.sh .u { fill: none; }
+#kv .kc-svg .gap { fill: none; stroke: var(--kv-c); stroke-width: 2; stroke-dasharray: 6 4; }
+#kv .kc-svg .gapt { text-anchor: middle; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 15px; fill: var(--ink); }
+#kv .kc-svg .rl4 { text-anchor: middle; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 18px; fill: var(--ink); }
+#kv .kc-ans.hang { text-indent: -.5em; }
+@container (max-width: 560px) { #kv .kc-svg .fn { font-size: 56px; } #kv .kc-svg .gapt { font-size: 17px; } #kv .kc-svg .rl4 { font-size: 24px; } }
+#kv .kc-svg .rl5 { text-anchor: start; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 20px; fill: var(--ink); }
+#kv .kc-svg .rl5 .b { font-family: var(--kv-num), sans-serif; font-weight: 800; font-size: 44px; }
+#kv .kc-svg .rl5 .b.pk { fill: var(--kv-c); } #kv .kc-svg .rl5 .b.bl { fill: var(--blue); }
+#kv .kc-svg .rl6 { text-anchor: start; font-family: var(--kv-jp), sans-serif; font-weight: 700; font-size: 14px; fill: var(--ink); }
+@container (max-width: 560px) { #kv .kc-svg .rl5 { font-size: 24px; } #kv .kc-svg .rl5 .b { font-size: 50px; } #kv .kc-svg .rl6 { font-size: 18px; } }
+
+#kv .kc-svg .rl7 { text-anchor: start; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 16px; fill: var(--ink); }
+#kv .kc-svg .rl8 { text-anchor: start; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 14px; fill: var(--ink); }
+#kv .kc-svg .rl8 .b { font-family: var(--kv-num), sans-serif; font-weight: 800; font-size: 26px; fill: var(--kv-c); }
+#kv .kc-svg .fun { text-anchor: middle; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 15px; fill: var(--ink); }
+#kv .kc-big .n .v { white-space: nowrap; }
+#kv .kc-svg .flow { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: 2 6; stroke-linecap: round; marker-end: url(#k2-mk); }
+@container (max-width: 560px) { #kv .kc-svg .rl7 { font-size: 17px; } #kv .kc-svg .rl8 { font-size: 15px; } #kv .kc-svg .rl8 .b { font-size: 28px; } #kv .kc-svg .fun { font-size: 14px; } }
+#kv .kc-svg .aitile { fill: none; stroke: var(--kv-c); stroke-width: 3; }
+#kv .sc2 .kc-big .n { font-size: calc(min(10cqh, 14cqw) * var(--kv-num-k, 1)); }
+#kv .kc-big .n small.pre { margin: 0 .12em 0 0; }
+
+#kv .s2v { display: none; }
+html[data-s2="a"] #kv .s2-a, html[data-s2="b"] #kv .s2-b, html[data-s2="c"] #kv .s2-c, html[data-s2="d"] #kv .s2-d, html:not([data-s2]) #kv .s2-a { display: block; }
+#kv .kc-svg .s2l { text-anchor: start; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 16px; fill: var(--ink); }
+#kv .kc-svg .s2l .no { fill: var(--kv-c); }
+#kv .kc-svg .s2p { text-anchor: end; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 14px; fill: var(--ink); }
+#kv .kc-svg .s2p .b { font-family: var(--kv-num), sans-serif; font-weight: 800; font-size: 26px; fill: var(--kv-c); }
+@container (max-width: 560px) { #kv .kc-svg .s2l { font-size: 19px; } #kv .kc-svg .s2p { font-size: 16px; } #kv .kc-svg .s2p .b { font-size: 30px; } }
+#kv .kc-svg .s2n { text-anchor: start; font-family: var(--body), sans-serif; font-weight: 700; font-size: 10px; fill: var(--sub); }
+#kv .s2note-d { display: none; } html[data-s2="d"] #kv .s2note-d { display: block; } html[data-s2="d"] #kv .s2note-abc { display: none; }
+html[data-s2="e"] #kv .s2-e, html[data-s2="f"] #kv .s2-f, html[data-s2="g"] #kv .s2-g, html[data-s2="h"] #kv .s2-h, html[data-s2="i"] #kv .s2-i, html[data-s2="j"] #kv .s2-j, html[data-s2="k"] #kv .s2-k, html[data-s2="l"] #kv .s2-l, html[data-s2="m"] #kv .s2-m { display: block; }
+#kv .kc-svg .s2shelf { stroke: var(--ink); stroke-width: .8; opacity: .55; }
+#kv .kc-svg .s2plate > rect:first-child { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; }
+#kv .kc-svg .s2new rect { fill: var(--yellow); stroke: var(--ink); stroke-width: 1; }
+#kv .kc-svg .s2new text { font-size: 8.5px; font-weight: 900; fill: var(--ink); }
+#kv .kc-svg .s2rank rect { fill: var(--ink); }
+#kv .kc-svg .s2rk text { font-size: 7px; }
+#kv .kc-svg .s2rank text { font-family: var(--kv-num), var(--kv-jp), sans-serif; font-size: 10.5px; font-weight: 800; fill: var(--paper); letter-spacing: .02em; }
+#kv .kc-svg .aicap { fill: none; stroke: var(--kv-c); stroke-width: 4; }
+#kv .kc-svg .s2flow { fill: var(--kv-c); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; }
+#kv .kc-svg .ailab rect { fill: var(--kv-c); }
+#kv .kc-svg .ailab rect { stroke: #fff; stroke-width: 2; }
+#kv .kc-svg .ailab text { text-anchor: middle; font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 13px; fill: #fff; }
+#kv .kc-svg .price rect { fill: var(--ink); }
+#kv .kc-svg .price text { text-anchor: middle; font-family: var(--kv-num), sans-serif; font-weight: 700; font-size: 10px; fill: #fff; }
+#kv .kc-svg .s2p .r { font-size: 13px; fill: var(--ink); }
+#kv .kc-svg .s2p .b .a { font-family: var(--kv-jp), sans-serif; font-weight: 900; font-size: 15px; }
+@container (max-width: 560px) { #kv .kc-svg .price { display: none; } }
+
+#kv .kc-svg .s2pg { text-anchor: start; }
+#kv .kc-svg .s2hf { fill: none; stroke: var(--ink); stroke-width: 1.3; }
+@container (max-width: 560px) { #kv .kc-svg .s2pg { font-size: 14px; } #kv .kc-svg .s2pg .b { font-size: 26px; } }
