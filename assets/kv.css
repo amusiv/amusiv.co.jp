@@ -558,3 +558,5 @@ html[data-s2="e"] #kv .s2-e, html[data-s2="f"] #kv .s2-f, html[data-s2="g"] #kv 
   #kv.s-live:not(.c-text) .copy { opacity: 0; pointer-events: none; }
   #kv.s-live:not(.c-text) .copy .inner > * { pointer-events: none; }
 }
+
+@media (max-width: 860px) { #kv .copy .sub { display: none; } #kv .copy .btn { margin-top: 4px; } }
