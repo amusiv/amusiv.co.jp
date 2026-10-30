@@ -16,7 +16,7 @@
   var cur = scenes.length - 1, z = 1, token = 0, timers = [];
   // スマホ（860px 以下）：文字を絵の上に重ね、2秒待ってから場面を送り、絵に戻ったら少し置いてまた最初から（繰り返す）
   var mobile = window.matchMedia && window.matchMedia('(max-width: 860px)').matches;
-  var LEAD = 2000, HOLD = 2600;
+  var LEAD = 2000;
   hero.classList.add('c-text');
 
   function mark(i) {
@@ -118,13 +118,7 @@
         else if (!mobile) hero.classList.add('s-done');
       }, ms + lead));
     });
-    if (mobile) {
-      timers.push(setTimeout(function () {
-        if (hero.classList.contains('s-manual')) return;
-        started = false;
-        go();
-      }, slots[slots.length - 1] + lead + HOLD));
-    }
+    // 10-30 夜・持ち主「ループはやめて。一周したら最初の画面のまま」：繰り返さない
   }
   setTimeout(go, 1500);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { requestAnimationFrame(go); });
