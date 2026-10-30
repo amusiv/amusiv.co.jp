@@ -140,3 +140,7 @@ html { scroll-behavior: smooth; }
 
 .nw { display: inline-block; }
 .rcard.is-soon { cursor: default; } .rcard.is-soon:hover { transform: none; box-shadow: none; } .rcard.is-soon .pic span { font-size: 24px; letter-spacing: .14em; }
+
+.carousel { padding: 6px 8px 22px 8px; margin-inline: -8px; scroll-padding-inline: 8px; }
+.carousel > :first-child { scroll-margin-left: 8px; }
+
