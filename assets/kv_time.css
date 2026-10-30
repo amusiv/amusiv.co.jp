@@ -61,7 +61,14 @@
 #kv .sc1.is-in .g1-x { animation: kvOff .01s steps(1, end) 2.205s both; }
 #kv .sc2.is-in .waf .on { animation: kvCell .01s steps(1, end) calc(1.25s + var(--n) * .03s) both; }
 #kv .sc2.is-in .kv-mk { animation: kvMk .3s ease-out 1.95s both; }
-#kv .sc3.is-in .waf490 .on { animation: kvCell .01s steps(1, end) calc(1.25s + var(--n) * .1s) both; }
-#kv .sc3.is-in .g3-call { animation: kvOff .01s steps(1, end) 1.8s both; }
-#kv .sc3.is-in .g3-bar { animation: kvBar .35s ease-out 1.9s both; }
-#kv .sc3.is-in .kv-mk { animation: kvMk .3s ease-out 2.3s both; }
+
+@keyframes k3pop { from { transform: scale(.4); } to { transform: none; } }
+@keyframes k3crown { from { transform: rotate(-8deg) scale(0); opacity: 0; } to { transform: rotate(-8deg); opacity: 1; } }
+@keyframes k3flow { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes k3cell { from { background-color: transparent; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 25%, transparent); transform: scale(.55); } to { background-color: var(--kv-c); box-shadow: none; transform: none; } }
+@keyframes k3off { from { background-color: transparent; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 25%, transparent); } to { background-color: var(--blue); box-shadow: none; } }
+#kv .sc3.is-in .k3-count .k3g i.on { animation: k3pop .45s cubic-bezier(.3,1.4,.5,1) 1.25s both; }
+#kv .sc3.is-in .k3-count .k3g i.on::after { animation: k3crown .45s cubic-bezier(.3,1.5,.5,1) 1.7s both; }
+#kv .sc3.is-in .k3flow { animation: k3flow .45s cubic-bezier(.2,.6,.2,1) 1.9s both; }
+#kv .sc3.is-in .k3-sales .k3g i.on { animation: k3cell .3s ease-out calc(2.3s + var(--d, 0) * 22ms) both; }
+#kv .sc3.is-in .k3-sales .k3g i:not(.on) { animation: k3off .35s ease-out 2.95s both; }
