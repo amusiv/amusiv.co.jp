@@ -14,6 +14,10 @@
   var len = +hero.getAttribute('data-kv-len') || 500;
   var intro = root.classList.contains('js-intro');
   var cur = scenes.length - 1, z = 1, token = 0, timers = [];
+  // スマホ（860px 以下）：文字を絵の上に重ね、2秒待ってから場面を送り、絵に戻ったら少し置いてまた最初から（繰り返す）
+  var mobile = window.matchMedia && window.matchMedia('(max-width: 860px)').matches;
+  var LEAD = 2000, HOLD = 2600;
+  hero.classList.add('c-text');
 
   function mark(i) {
     btns.forEach(function (b, j) {
@@ -44,6 +48,7 @@
     if (prev && !still) { prev.classList.remove('rev'); restart(prev, 'out'); }
     cur = i;
     hero.classList.add('s-live');
+    hero.classList.toggle('c-text', sc.classList.contains('kv-pic'));
     sc.style.zIndex = ++z;
     sc.classList.remove('out');
     sc.classList.add('on');
@@ -104,14 +109,22 @@
     started = true;
     hero.classList.add('s-play');
     if (hero.classList.contains('s-manual')) return;
+    var lead = mobile ? LEAD : 0;
     slots.forEach(function (ms, i) {
       timers.push(setTimeout(function () {
-        // 場面1は帯で替えずに最初から出す（中のグラフだけ動く）
-        if (i === 0) { show(0, true); restart(scenes[0], 'is-in'); } else show(i);
+        // 場面1は帯で替えずに最初から出す（中のグラフだけ動く）。繰り返しの2周目からは絵から帯で替える
+        if (i === 0 && cur === -1) { show(0, true); restart(scenes[0], 'is-in'); } else show(i);
         if (i < slots.length - 1) run(i, slots[i + 1] - ms);
-        else hero.classList.add('s-done');
-      }, ms));
+        else if (!mobile) hero.classList.add('s-done');
+      }, ms + lead));
     });
+    if (mobile) {
+      timers.push(setTimeout(function () {
+        if (hero.classList.contains('s-manual')) return;
+        started = false;
+        go();
+      }, slots[slots.length - 1] + lead + HOLD));
+    }
   }
   setTimeout(go, 1500);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { requestAnimationFrame(go); });

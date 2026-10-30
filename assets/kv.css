@@ -548,4 +548,13 @@ html[data-s2="e"] #kv .s2-e, html[data-s2="f"] #kv .s2-f, html[data-s2="g"] #kv 
 #kv .kc-svg .s2hf { fill: none; stroke: var(--ink); stroke-width: 1.3; }
 @container (max-width: 560px) { #kv .kc-svg .s2pg { font-size: 14px; } #kv .kc-svg .s2pg .b { font-size: 26px; } }
 
-#kv { height: max(420px, min(56vw, 720px, 100vh - 66px)); }
+@media (min-width: 861px) { #kv { height: max(420px, min(56vw, 720px, 100vh - 66px)); } }
+
+@media (max-width: 860px) {
+  #kv { position: relative; }
+  #kv .copy { position: absolute; left: 0; right: 0; top: 0; height: clamp(460px, 108vw, 620px); order: 0; display: flex; align-items: flex-end; z-index: 999; pointer-events: none; transition: opacity .45s ease-out; }
+  #kv .copy .inner { padding: 110px 20px 26px; pointer-events: auto; background: linear-gradient(to bottom, color-mix(in srgb, var(--paper) 0%, transparent) 0, color-mix(in srgb, var(--paper) 88%, transparent) 100px, color-mix(in srgb, var(--paper) 94%, transparent) 100%); }
+  #kv .copy .btn { top: 0; margin-top: 8px; }
+  #kv.s-live:not(.c-text) .copy { opacity: 0; pointer-events: none; }
+  #kv.s-live:not(.c-text) .copy .inner > * { pointer-events: none; }
+}
