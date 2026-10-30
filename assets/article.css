@@ -575,3 +575,6 @@ html.js .wfig:not(.go) .w-count i.on::after { transform: rotate(-8deg) scale(0);
 
 @media (min-width: 1100px) { .hero .in > :not(figure.cover) { position: relative; top: -20px; } }
 .sec p:has(+ p.tight) { margin-bottom: 0; }
+
+.site-foot .in { grid-template-columns: minmax(0, 1.6fr) minmax(0, .7fr); }
+@media (max-width: 900px) { .site-foot .in { grid-template-columns: 1fr; } }
