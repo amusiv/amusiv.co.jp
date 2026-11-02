@@ -1,0 +1,190 @@
+/* 記事002 逆算カレンダー（ガントチャート）：紙の地・墨＝Steam 側の待ち・斜線＝Valve の審査・青＝作り手の作業・黄＝法人だけ・ピンク◆＝締切と発売日 */
+.gantt { --gl: 272px; --rowh: 58px; --barh: 26px; position: relative; }
+.g-sw { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 0 0 18px; align-items: center; }
+.g-sw .grp { display: flex; align-items: center; gap: 8px; }
+.g-sw .grp > span { font-size: var(--fs-cap); font-weight: 700; color: var(--sub); white-space: nowrap; }
+.g-sw button { font: inherit; font-size: var(--fs-cap); font-weight: 700; line-height: 1; padding: 9px 14px 8px; background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); cursor: pointer; white-space: nowrap; }
+.g-sw button + button { margin-left: -1.5px; }
+.g-sw button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.g-sw button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; position: relative; z-index: 1; }
+.g-ans { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; border-top: 2px solid var(--ink); padding-top: 12px; margin: 0 0 18px; }
+.g-ans .l { font-size: var(--fs-body); font-weight: 700; }
+.g-ans .n { font-family: var(--num); font-weight: 800; font-size: var(--fs-h2); line-height: 1; color: var(--accent); text-shadow: .035em .035em 0 var(--blue); white-space: nowrap; }
+.g-ans .n small { font-family: var(--jp); font-weight: 800; font-size: var(--fs-sub); color: var(--ink); text-shadow: none; margin-left: 2px; }
+.g-ans .s { font-size: var(--fs-cap); color: var(--sub); }
+.g-key { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--fs-note); color: var(--sub); margin: 0 0 14px; }
+.g-key span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.g-key i { display: inline-block; width: 18px; height: 10px; }
+.g-key i.wait { background: var(--ink); }
+.g-key i.review { background: repeating-linear-gradient(135deg, var(--ink) 0 2px, transparent 2px 5px); box-shadow: inset 0 0 0 1px var(--ink); }
+.g-key i.work { background: var(--blue); }
+.g-key i.corp { background: var(--yellow); box-shadow: inset 0 0 0 1px var(--ink); }
+.g-key i.mile { width: 10px; height: 10px; background: var(--accent); transform: rotate(45deg); margin-inline: 4px; }
+
+.g-body { display: grid; grid-template-columns: var(--gl) minmax(0, 1fr); column-gap: 14px; row-gap: 0; align-items: stretch; position: relative; }
+.g-grid { position: absolute; left: calc(var(--gl) + 14px); right: 0; top: 40px; bottom: 0; background-image: linear-gradient(90deg, var(--line) 0 1px, transparent 1px); background-size: calc(100% * var(--stepf, .1)) 100%; background-position: right 0 top 0; background-repeat: repeat-x; pointer-events: none; }
+.g-line { position: absolute; right: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); pointer-events: none; z-index: 1; }
+.g-line b { position: absolute; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--paper); font-family: var(--jp); font-weight: 800; font-size: 13px; line-height: 1; padding: 6px 9px 5px; white-space: nowrap; box-shadow: 2px 2px 0 var(--ink); }
+.g-line b.top { top: -6px; }
+.g-line b.btm { bottom: -30px; }
+.g-line b.top::after { content: ""; position: absolute; left: 50%; bottom: -6px; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--accent); border-bottom: 0; }
+.g-body { margin-bottom: 34px; }
+.g-axis span.zero { visibility: hidden; }
+.g-axis.mini { display: none; }
+.g-head { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: end; border-bottom: 2px solid var(--ink); padding-bottom: 6px; margin-top: 10px; }
+.g-head .lab { font-size: var(--fs-note); font-weight: 700; color: var(--sub); letter-spacing: .04em; }
+.g-axis { position: relative; height: 22px; }
+.g-axis span { position: absolute; bottom: 0; transform: translateX(-50%); font-family: var(--num); font-weight: 600; font-size: 13px; letter-spacing: .02em; color: var(--sub); white-space: nowrap; line-height: 1; }
+.g-axis span::after { content: ""; position: absolute; left: 50%; top: 100%; width: 1px; height: 6px; background: var(--line); }
+.g-axis span.zero { color: var(--ink); font-weight: 800; transform: translateX(-100%); }
+.g-axis span.zero::after { left: auto; right: 0; background: var(--ink); }
+
+.g-grp { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: end; padding: 22px 0 6px; }
+.g-grp:first-of-type { padding-top: 14px; }
+.g-grp h4 { margin: 0; font-size: var(--fs-cap); font-weight: 800; letter-spacing: .04em; }
+.g-grp h4 small { font-weight: 500; color: var(--sub); margin-left: 8px; letter-spacing: 0; }
+.gantt[data-corp="0"] .g-key .k-corp { display: none; }
+.g-grp.corp h4 { background: linear-gradient(transparent 55%, var(--yellow) 55%); display: inline-block; padding-inline: .1em; }
+.g-row { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center; height: var(--rowh); border-top: 1px solid var(--line); }
+.g-row .lab { font-size: var(--fs-cap); line-height: 1.4; padding: 0 10px 0 0; }
+.g-row .lab b { font-weight: 700; display: block; }
+.g-row .lab small { display: block; font-size: var(--fs-note); color: var(--sub); }
+.g-track { position: relative; height: 100%; min-height: var(--rowh); }
+.g-bar { position: absolute; top: 50%; height: var(--barh); transform: translateY(-50%); left: calc(var(--l) * 1%); width: calc(var(--w) * 1%); min-width: 4px; border-radius: 3px; }
+.g-bar.wait { background: var(--ink); }
+.g-bar.review { background: repeating-linear-gradient(135deg, var(--ink) 0 2px, transparent 2px 6px); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.g-bar.work { background: var(--blue); }
+.g-bar.corp { background: var(--yellow); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.g-bar.event { background: var(--between); }
+.g-bar .t { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--num); font-weight: 700; font-size: 14px; letter-spacing: .02em; line-height: 1; white-space: nowrap; color: var(--ink); padding: 0 0 0 8px; left: 100%; }
+.g-bar .t.lt { left: auto; right: 100%; padding: 0 8px 0 0; }
+.g-bar.wait .t.in, .g-bar.work .t.in { left: 8px; padding: 0; color: var(--paper); }
+.g-bar.corp .t.in { left: 8px; padding: 0; color: var(--ink); }
+.g-ms { position: absolute; top: 50%; left: calc(var(--l) * 1%); width: 0; height: 0; }
+.g-mile { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; background: var(--accent); transform: rotate(45deg); box-shadow: 1.5px 1.5px 0 var(--ink); }
+.g-ms .t { position: absolute; left: 14px; top: 0; transform: translateY(-50%); font-family: var(--num); font-weight: 700; font-size: 14px; letter-spacing: .02em; line-height: 1; white-space: nowrap; color: var(--ink); }
+.g-ms.left .t { left: auto; right: 14px; }
+.g-today { position: absolute; top: 0; bottom: 0; left: calc(var(--l) * 1%); width: 0; border-left: 2px solid var(--accent); }
+.g-rel { position: absolute; top: -2px; bottom: -2px; right: 0; width: 2px; background: var(--ink); }
+.g-foot { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; border-top: 2px solid var(--ink); }
+.g-foot .lab { font-size: var(--fs-note); color: var(--sub); padding: 8px 0 0; }
+.g-foot .g-track { background: none; min-height: 0; height: 18px; }
+.g-foot .g-track span { position: absolute; right: 0; top: 4px; font-family: var(--num); font-weight: 800; font-size: 13px; color: var(--ink); letter-spacing: .04em; }
+
+/* 動き：見えたら左から伸びる */
+html.js .gantt .g-bar { transform-origin: 0 50%; transform: translateY(-50%) scaleX(0); transition: transform .6s cubic-bezier(.2,.6,.2,1); transition-delay: calc(var(--i, 0) * 45ms); }
+html.js .gantt .g-bar .t { opacity: 0; transition: opacity .3s; transition-delay: calc(var(--i, 0) * 45ms + .45s); }
+html.js .gantt .g-ms { opacity: 0; transition: opacity .35s; transition-delay: calc(var(--i, 0) * 45ms + .2s); }
+html.js .gantt .g-mile { transform: rotate(45deg) scale(.3); transition: transform .45s cubic-bezier(.3,1.4,.5,1); transition-delay: calc(var(--i, 0) * 45ms + .2s); }
+html.js .gantt.go .g-bar { transform: translateY(-50%) scaleX(1); }
+html.js .gantt.go .g-bar .t { opacity: 1; }
+html.js .gantt.go .g-ms { opacity: 1; }
+html.js .gantt.go .g-mile { transform: rotate(45deg) scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  html.js .gantt .g-bar, html.js .gantt .g-bar .t, html.js .gantt .g-mile, html.js .gantt .g-ms { transition: none; }
+  html.js .gantt .g-ms { opacity: 1; }
+  html.js .gantt .g-bar { transform: translateY(-50%) scaleX(1); }
+  html.js .gantt .g-bar .t { opacity: 1; }
+  html.js .gantt .g-mile { transform: rotate(45deg) scale(1); }
+}
+
+/* 冒頭の比べ：2本の物差し（公式の決まりだけ・売るための準備） */
+.cv2 { display: grid; gap: 14px; margin: 0; }
+.cv2 .r { display: grid; grid-template-columns: 1fr; gap: 4px; }
+.cv2 .r .y { font-size: var(--fs-cap); font-weight: 700; display: flex; justify-content: space-between; align-items: baseline; }
+.cv2 .r .y b { font-family: var(--num); font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -.01em; }
+.cv2 .r .y b small { font-family: var(--jp); font-weight: 900; font-size: 15px; margin-left: 2px; }
+.cv2 .r .bar { position: relative; height: 18px; background: var(--line); }
+.cv2 .r .bar i { position: absolute; right: 0; top: 0; bottom: 0; width: calc(var(--d) / 240 * 100%); }
+.cv2 .r.a .bar i { background: var(--blue); }
+.cv2 .r.b .bar i { background: var(--accent); }
+.cv2 .r.a .y b { color: var(--blue); }
+.cv2 .r.b .y b { color: var(--accent); text-shadow: .04em .04em 0 var(--ink); }
+.cv2 .r.b .y b small { color: var(--ink); text-shadow: none; }
+.cv2 .ax { display: flex; justify-content: space-between; font-family: var(--num); font-weight: 600; font-size: 12px; color: var(--sub); letter-spacing: .04em; border-top: 1px solid var(--ink); padding-top: 4px; }
+.cv2 .ax b { color: var(--ink); font-weight: 800; }
+
+/* 02 の表：作る物の一覧 */
+.tasks { width: 100%; border-collapse: collapse; font-size: var(--fs-cap); line-height: 1.6; }
+.tasks th, .tasks td { text-align: left; vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); word-break: auto-phrase; text-wrap: pretty; }
+.tasks thead th { font-size: var(--fs-note); font-weight: 700; color: var(--sub); letter-spacing: .04em; border-top: 0; border-bottom: 2px solid var(--ink); padding-top: 0; }
+.tasks tbody th { font-weight: 700; width: 34%; }
+.tasks td.d { white-space: nowrap; font-family: var(--num); font-weight: 700; font-size: 16px; width: 110px; }
+.tasks td.d small { font-family: var(--jp); font-weight: 500; font-size: var(--fs-note); color: var(--sub); display: block; }
+.tasks tr.grp th { font-size: var(--fs-note); letter-spacing: .06em; color: var(--sub); font-weight: 800; padding-top: 22px; border-top: 0; }
+.tasks tr.grp th .kind { margin-left: 8px; }
+.tasks tbody tr:last-child th, .tasks tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
+
+/* 04 の表：法人と個人 */
+.vs { width: 100%; border-collapse: collapse; font-size: var(--fs-cap); line-height: 1.65; }
+.vs th, .vs td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-top: 1px solid var(--line); }
+.vs thead th { border-top: 0; border-bottom: 2px solid var(--ink); font-size: var(--fs-note); color: var(--sub); letter-spacing: .04em; padding-top: 0; }
+.vs thead th.p { color: var(--blue); }
+.vs thead th.c { color: var(--after-text); }
+.vs tbody th { font-weight: 700; width: 24%; }
+.vs tbody tr:last-child th, .vs tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
+
+@media (max-width: 900px) {
+  .gantt { --gl: 190px; }
+}
+@media (max-width: 600px) {
+  .gantt { --gl: 0px; --rowh: auto; --barh: 20px; }
+  .g-grid { left: 0; top: 0; }
+  .g-line { top: 0; box-shadow: none; }
+  .g-line b { font-size: 12px; padding: 5px 7px 4px; }
+  .g-line b.top { left: auto; right: 0; transform: none; }
+  .g-line b.btm { left: auto; right: 0; transform: none; }
+  .g-line b.top::after { left: auto; right: 6px; margin-left: 0; }
+  .g-axis.mini { display: block; height: 18px; margin-top: 6px; }
+  .g-axis span.first { transform: none; }
+  .g-axis span.first::after { left: 0; }
+  .g-grp h4 { background: var(--paper); display: inline-block; padding-right: 6px; position: relative; }
+  .g-body { grid-template-columns: minmax(0, 1fr); column-gap: 0; }
+  .g-head { grid-template-columns: 1fr; }
+  .g-head .lab { display: none; }
+  .g-grp { grid-template-columns: 1fr; padding-top: 24px; }
+  .g-row { grid-template-columns: 1fr; padding: 8px 0 10px; height: auto; }
+  .g-row .lab { padding: 0 0 4px; }
+  .g-row .lab b, .g-row .lab small { display: inline; }
+  .g-row .lab small::before { content: "・"; }
+  .g-track { min-height: 26px; height: 26px; }
+  .g-bar .t { font-size: 12px; }
+  .g-row .lab b { background: var(--paper); }
+  .g-axis span:nth-child(even):not(.zero) { display: none; }
+  .g-sw .grp > span { display: none; }
+  .g-ans .n { font-size: 26px; }
+  .tasks thead { display: none; }
+  .tasks, .tasks tbody, .tasks tr, .tasks th, .tasks td { display: block; width: auto !important; }
+  .tasks tr { padding: 10px 0; border-top: 1px solid var(--line); }
+  .tasks tr.grp { border-top: 0; padding: 18px 0 0; }
+  .tasks th, .tasks td { border: 0; padding: 0; }
+  .tasks td.d { white-space: normal; margin-top: 2px; }
+  .tasks td.d small { display: inline; margin-left: 6px; }
+  .tasks tbody tr:last-child th, .tasks tbody tr:last-child td { border-bottom: 0; }
+  .tasks tbody tr:last-child { border-bottom: 2px solid var(--ink); }
+  .vs thead { display: none; }
+  .vs, .vs tbody, .vs tr, .vs th, .vs td { display: block; width: auto !important; }
+  .vs tr { padding: 10px 0; border-top: 1px solid var(--line); }
+  .vs th, .vs td { border: 0; padding: 0; }
+  .vs td::before { content: attr(data-h); display: block; font-size: var(--fs-note); font-weight: 700; margin-top: 6px; }
+  .vs td.p::before { color: var(--blue); }
+  .vs td.c::before { color: var(--after-text); }
+  .vs tbody tr:last-child th, .vs tbody tr:last-child td { border-bottom: 0; }
+  .vs tbody tr:last-child { border-bottom: 2px solid var(--ink); }
+}
+
+/* 記事002 の冒頭：題が13字×2行なので、右に図を置く幅では字を少し小さく。図の注は軸の字に重ねない */
+@media (min-width: 1100px) { .a002 h1 { font-size: 42px; } }
+.hero .cover:has(.cv2) figcaption span { position: static; }
+/* 記事002：章は5つ。ガントの組の見出しは左の列からはみ出してよい */
+.a002 .sec h2 .no::after { content: "/ 05"; }
+.g-grp h4 { grid-column: 1 / -1; }
+
+/* 記事002：スマホの数字の列は「3〜5営業日」が入る幅に */
+@media (max-width: 600px) { .a002 .facts li { grid-template-columns: 104px 1fr; gap: 10px; } }
+.g-grp.corp h4 { justify-self: start; }
+
+/* 冒頭の図の題は1行で収まらないので、注は下の行に */
+.hero .cover:has(.cv2) figcaption { display: block; }
+.hero .cover:has(.cv2) figcaption span { display: block; margin-top: 2px; }
+.cv2 .r .y span { white-space: nowrap; }
