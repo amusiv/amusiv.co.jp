@@ -1,4 +1,4 @@
-/* 記事002 逆算カレンダー（ガントチャート）：紙の地・墨＝Steam 側の待ち・斜線＝Valve の審査・青＝作り手の作業・黄＝法人だけ・ピンク◆＝締切と発売日 */
+
 .gantt { --gl: 272px; --rowh: 58px; --barh: 26px; position: relative; }
 .g-sw { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 0 0 18px; align-items: center; }
 .g-sw .grp { display: flex; align-items: center; gap: 8px; }
@@ -71,7 +71,6 @@
 .g-foot .g-track { background: none; min-height: 0; height: 18px; }
 .g-foot .g-track span { position: absolute; right: 0; top: 4px; font-family: var(--num); font-weight: 800; font-size: 13px; color: var(--ink); letter-spacing: .04em; }
 
-/* 動き：見えたら左から伸びる */
 html.js .gantt .g-bar { transform-origin: 0 50%; transform: translateY(-50%) scaleX(0); transition: transform .6s cubic-bezier(.2,.6,.2,1); transition-delay: calc(var(--i, 0) * 45ms); }
 html.js .gantt .g-bar .t { opacity: 0; transition: opacity .3s; transition-delay: calc(var(--i, 0) * 45ms + .45s); }
 html.js .gantt .g-ms { opacity: 0; transition: opacity .35s; transition-delay: calc(var(--i, 0) * 45ms + .2s); }
@@ -88,7 +87,6 @@ html.js .gantt.go .g-mile { transform: rotate(45deg) scale(1); }
   html.js .gantt .g-mile { transform: rotate(45deg) scale(1); }
 }
 
-/* 冒頭の比べ：2本の物差し（公式の決まりだけ・売るための準備） */
 .cv2 { display: grid; gap: 14px; margin: 0; }
 .cv2 .r { display: grid; grid-template-columns: 1fr; gap: 4px; }
 .cv2 .r .y { font-size: var(--fs-cap); font-weight: 700; display: flex; justify-content: space-between; align-items: baseline; }
@@ -104,7 +102,6 @@ html.js .gantt.go .g-mile { transform: rotate(45deg) scale(1); }
 .cv2 .ax { display: flex; justify-content: space-between; font-family: var(--num); font-weight: 600; font-size: 12px; color: var(--sub); letter-spacing: .04em; border-top: 1px solid var(--ink); padding-top: 4px; }
 .cv2 .ax b { color: var(--ink); font-weight: 800; }
 
-/* 02 の表：作る物の一覧 */
 .tasks { width: 100%; border-collapse: collapse; font-size: var(--fs-cap); line-height: 1.6; }
 .tasks th, .tasks td { text-align: left; vertical-align: top; padding: 10px 10px 10px 0; border-top: 1px solid var(--line); word-break: auto-phrase; text-wrap: pretty; }
 .tasks thead th { font-size: var(--fs-note); font-weight: 700; color: var(--sub); letter-spacing: .04em; border-top: 0; border-bottom: 2px solid var(--ink); padding-top: 0; }
@@ -115,7 +112,6 @@ html.js .gantt.go .g-mile { transform: rotate(45deg) scale(1); }
 .tasks tr.grp th .kind { margin-left: 8px; }
 .tasks tbody tr:last-child th, .tasks tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
 
-/* 04 の表：法人と個人 */
 .vs { width: 100%; border-collapse: collapse; font-size: var(--fs-cap); line-height: 1.65; }
 .vs th, .vs td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-top: 1px solid var(--line); }
 .vs thead th { border-top: 0; border-bottom: 2px solid var(--ink); font-size: var(--fs-note); color: var(--sub); letter-spacing: .04em; padding-top: 0; }
@@ -173,18 +169,15 @@ html.js .gantt.go .g-mile { transform: rotate(45deg) scale(1); }
   .vs tbody tr:last-child { border-bottom: 2px solid var(--ink); }
 }
 
-/* 記事002 の冒頭：題が13字×2行なので、右に図を置く幅では字を少し小さく。図の注は軸の字に重ねない */
 @media (min-width: 1100px) { .a002 h1 { font-size: 42px; } }
 .hero .cover:has(.cv2) figcaption span { position: static; }
-/* 記事002：章は5つ。ガントの組の見出しは左の列からはみ出してよい */
+
 .a002 .sec h2 .no::after { content: "/ 05"; }
 .g-grp h4 { grid-column: 1 / -1; }
 
-/* 記事002：スマホの数字の列は「3〜5営業日」が入る幅に */
 @media (max-width: 600px) { .a002 .facts li { grid-template-columns: 104px 1fr; gap: 10px; } }
 .g-grp.corp h4 { justify-self: start; }
 
-/* 冒頭の図の題は1行で収まらないので、注は下の行に */
 .hero .cover:has(.cv2) figcaption { display: block; }
 .hero .cover:has(.cv2) figcaption span { display: block; margin-top: 2px; }
 .cv2 .r .y span { white-space: nowrap; }
